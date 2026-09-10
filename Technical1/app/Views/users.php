@@ -3,6 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>User Accounts</title>
+    <?php /** just to make the webpage look better*/ ?>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    nav {
+        margin-bottom: 30px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    table {
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+</style>
 </head>
 <body>
     <nav>
