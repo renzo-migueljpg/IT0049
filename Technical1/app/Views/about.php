@@ -37,7 +37,9 @@
         <a href="<?= site_url('users') ?>">Users</a>
     </nav>
 
-    <h1>About the POS System</h1>
-    <p>This website is the first version of a basic Point-of-Sale system built with CodeIgniter 4.</p>
+    <h3>About the POS System</h3>
+    <p>Good day! Sir Joseph Calleja, This website is my output for Technical Formative Assessment 1.</p>
+    <p>Renzo Miguel R. Espino</p>
+
 </body>
 </html>
