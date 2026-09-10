@@ -8,27 +8,27 @@ class Users extends BaseController
     {
         $users = [
             [
-                'username'  => 'admin01',
+                'username'  => 'admin101',
                 'full_name' => 'Renzo',
                 'role'      => 'Administrator',
             ],
             [
-                'username'  => 'cashier01',
+                'username'  => 'cashier101',
                 'full_name' => 'Miguel',
                 'role'      => 'Cashier',
             ],
             [
-                'username'  => 'cashier02',
+                'username'  => 'cashier101',
                 'full_name' => 'Reyes',
                 'role'      => 'Cashier',
             ],
             [
-                'username'  => 'manager01',
+                'username'  => 'manager101',
                 'full_name' => 'Espino',
                 'role'      => 'Manager',
             ],
             [
-                'username'  => 'staff01',
+                'username'  => 'staff101',
                 'full_name' => 'Lebron',
                 'role'      => 'Staff',
             ],
