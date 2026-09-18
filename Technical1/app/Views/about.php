@@ -40,6 +40,8 @@
     <h3>About the POS System</h3>
     <p>Good day! Sir Joseph Calleja, This website is my output for Technical Formative Assessment 1.</p>
     <p>Renzo Miguel R. Espino</p>
+    <p>September 10, 2026 TFA1 / Update:Creation from Zero to Four Pages: My first Codeigniter Application  </p>
+    <p>September 18, 2026 TFA2 / Update:From Arrays to a Realdatabase  </p>
 
 </body>
 </html>
