@@ -1,0 +1,116 @@
+<?php
+/** @var array $user */
+
+$avatarFilename = ! empty($user['avatar'])
+    ? $user['avatar']
+    : 'default-avatar.svg';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit User</title>
+
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
+</head>
+<body>
+
+<nav>
+    <a href="<?= site_url('/') ?>">Home</a>
+    <a href="<?= site_url('about') ?>">About</a>
+    <a href="<?= site_url('customers') ?>">Customers</a>
+    <a href="<?= site_url('users') ?>">Users</a>
+</nav>
+
+<main class="container">
+    <section class="card">
+        <h1>Edit User</h1>
+        <p class="subtitle">Update the user's information and profile picture.</p>
+
+        <?php if (session('errors')): ?>
+            <div class="alert error-alert">
+                <strong>Please correct the following errors:</strong>
+
+                <ul>
+                    <?php foreach (session('errors') as $error): ?>
+                        <li><?= esc($error) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
+        <div class="current-avatar">
+            <img
+                src="<?= base_url(
+                    'uploads/avatars/' . $avatarFilename
+                ) ?>"
+                alt="Current avatar"
+            >
+        </div>
+
+        <form
+            action="<?= site_url('users/' . $user['id']) ?>"
+            method="post"
+            enctype="multipart/form-data"
+        >
+            <?= csrf_field() ?>
+
+            <div class="form-group">
+                <label for="username">Username</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value="<?= esc(old('username', $user['username'])) ?>"
+                    maxlength="50"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="full_name">Full Name</label>
+
+                <input
+                    type="text"
+                    id="full_name"
+                    name="full_name"
+                    value="<?= esc(old('full_name', $user['full_name'])) ?>"
+                    maxlength="100"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="avatar">Profile Picture</label>
+
+                <input
+                    type="file"
+                    id="avatar"
+                    name="avatar"
+                    accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                >
+
+                <p class="form-help">
+                    JPG or PNG only. Maximum file size: 2 MB.
+                </p>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="button">
+                    Update User
+                </button>
+
+                <a href="<?= site_url('users') ?>" class="button secondary">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </section>
+</main>
+
+</body>
+</html>

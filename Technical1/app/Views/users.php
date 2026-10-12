@@ -1,65 +1,103 @@
+<?php
+/** @var array $users */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>User Accounts</title>
-    <?php /** just to make the webpage look better*/ ?>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
 
-    nav {
-        margin-bottom: 30px;
-    }
-
-    nav a {
-        margin: 0 10px;
-    }
-
-    table {
-        margin: 20px auto;
-        border-collapse: collapse;
-    }
-
-    th,
-    td {
-        padding: 10px;
-    }
-</style>
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
 <body>
-    <nav>
-        <a href="<?= site_url('/') ?>">Home</a>
-        <a href="<?= site_url('about') ?>">About</a>
-        <a href="<?= site_url('customers') ?>">Customers</a>
-        <a href="<?= site_url('users') ?>">Users</a>
-    </nav>
 
-    <h1>User Accounts</h1>
+<nav>
+    <a href="<?= site_url('/') ?>">Home</a>
+    <a href="<?= site_url('about') ?>">About</a>
+    <a href="<?= site_url('customers') ?>">Customers</a>
+    <a href="<?= site_url('users') ?>">Users</a>
+</nav>
 
-    <table border="1" cellpadding="8">
-        <thead>
-            <tr>
-                <th>Username</th>
-                <th>Full Name</th>
-                <th>Created At</th>
-            </tr>
-        </thead>
+<main class="container">
+    <section class="card">
+        <div class="page-header">
+            <div>
+                <h1>User Accounts</h1>
+                <p class="subtitle">Manage user account information.</p>
+            </div>
 
-        <tbody>
-            
-      <?php /** @var array $users */ ?>
+            <a href="<?= site_url('users/new') ?>" class="button">
+                Add User
+            </a>
+        </div>
 
-        <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?= esc($user['username']) ?></td>
-                <td><?= esc($user['full_name']) ?></td>
-                <td><?= esc($user['created_at']) ?></td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+        <?php if (session('success')): ?>
+            <div class="alert success-alert">
+                <?= esc(session('success')) ?>
+            </div>
+        <?php endif; ?>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Avatar</th>
+                    <th>Username</th>
+                    <th>Full Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php if (! empty($users) && is_array($users)): ?>
+
+                    <?php foreach ($users as $user): ?>
+                        <?php
+                        $avatarFilename = ! empty($user['avatar'])
+                            ? $user['avatar']
+                            : 'default-avatar.svg';
+                        ?>
+
+                        <tr>
+                            <td>
+                                <img
+                                    class="avatar-thumbnail"
+                                    src="<?= base_url(
+                                        'uploads/avatars/' . $avatarFilename
+                                    ) ?>"
+                                    alt="<?= esc($user['full_name']) ?> avatar"
+                                >
+                            </td>
+
+                            <td><?= esc($user['username']) ?></td>
+                            <td><?= esc($user['full_name']) ?></td>
+
+                            <td>
+                                <a
+                                    href="<?= site_url(
+                                        'users/' . $user['id'] . '/edit'
+                                    ) ?>"
+                                    class="button small"
+                                >
+                                    Edit
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+
+                <?php else: ?>
+
+                    <tr>
+                        <td colspan="4">No user records were found.</td>
+                    </tr>
+
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </section>
+</main>
+
 </body>
 </html>
