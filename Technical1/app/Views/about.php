@@ -2,46 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Page</title>
-        <?php /** just to make the webpage look better*/ ?>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    nav {
-        margin-bottom: 30px;
-    }
+    <title>About</title>
 
-    nav a {
-        margin: 0 10px;
-    }
-
-    table {
-        margin: 20px auto;
-        border-collapse: collapse;
-    }
-
-    th,
-    td {
-        padding: 10px;
-    }
-</style>
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
 <body>
-    <nav>
-        <a href="<?= site_url('/') ?>">Home</a>
-        <a href="<?= site_url('about') ?>">About</a>
-        <a href="<?= site_url('customers') ?>">Customers</a>
-        <a href="<?= site_url('users') ?>">Users</a>
-    </nav>
 
-    <h3>About the POS System</h3>
-    <p>Good day! Sir Joseph Calleja, This website is my output for Technical Formative Assessment 2.</p>
-    <p>Renzo Miguel R. Espino</p>
-    <p>September 10, 2026 TFA1 / Update:Creation from Zero to Four Pages: My first Codeigniter Application  </p>
-    <p>September 18, 2026 TFA2 / Update:From Arrays to a Realdatabase  </p>
+<nav>
+    <a href="<?= site_url('/') ?>">Home</a>
+    <a href="<?= site_url('about') ?>">About</a>
+    <a href="<?= site_url('customers') ?>">Customers</a>
+    <a href="<?= site_url('users') ?>">Users</a>
+</nav>
+
+<main class="container">
+    <section class="card">
+        <h1>About the System</h1>
+
+        <p class="subtitle">
+            Information about the POS Management System.
+        </p>
+
+        <p>
+            Good day sir Calleja!, this is my output for tevchniacal 3 activity.
+            Css is used to style the page and make it visually appealing.
+        </p>
+
+        <p>
+            The system supports creating and editing accounts, validating
+            submitted information, and uploading prepared profile pictures
+            for users.
+        </p>
+
+        <p>
+            <strong>Developer:</strong> Renzo Miguel Espino
+        </p>
+    </section>
+
+    <footer>
+        POS Management System
+    </footer>
+</main>
 
 </body>
 </html>

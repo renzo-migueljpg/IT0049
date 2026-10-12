@@ -2,42 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
-    <?php /** just to make the webpage look better*/ ?>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    nav {
-        margin-bottom: 30px;
-    }
+    <title>POS Management System</title>
 
-    nav a {
-        margin: 0 10px;
-    }
-
-    table {
-        margin: 20px auto;
-        border-collapse: collapse;
-    }
-
-    th,
-    td {
-        padding: 10px;
-    }
-</style>
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
 <body>
-    <nav>
-        <a href="<?= site_url('/') ?>">Home</a>
-        <a href="<?= site_url('about') ?>">About</a>
-        <a href="<?= site_url('customers') ?>">Customers</a>
-        <a href="<?= site_url('users') ?>">Users</a>
-    </nav>
 
-    <h1>Point-of-Sale System</h1>
-    <p>Welcome to the landing page of our basic POS system.</p>
+<nav>
+    <a href="<?= site_url('/') ?>">Home</a>
+    <a href="<?= site_url('about') ?>">About</a>
+    <a href="<?= site_url('customers') ?>">Customers</a>
+    <a href="<?= site_url('users') ?>">Users</a>
+</nav>
+
+<main class="container">
+    <section class="card">
+        <h1>POS Management System</h1>
+
+        <p class="subtitle">
+            Welcome to the Point-of-Sale account management system.
+        </p>
+
+        <p>
+            Use this application to manage customer and user accounts.
+            You can create new records, update existing information,
+            and upload profile pictures for user accounts.
+        </p>
+
+       
+    </section>
+
+    <footer>
+        POS Management System
+    </footer>
+</main>
+
 </body>
 </html>

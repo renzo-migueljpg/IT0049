@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2026 at 02:23 PM
+-- Generation Time: Oct 12, 2026 at 03:12 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `full_name`, `email`, `phone`, `created_at`) VALUES
-(1, 'Renzo Miguel Espino', 'renzo@example.com', '123-456-7890', '2026-09-18 21:12:48'),
+(1, 'Renzo Miguel Espino', 'renzo@example.com', '123-456-789111', '2026-09-18 21:12:48'),
 (2, 'Spongebob Squarepants', 'spongebob@example.com', '123-456-7890', '2026-09-18 21:12:48'),
 (3, 'Patrick Star', 'patrick@example.com', '123-456-7890', '2026-09-18 21:12:48'),
 (4, 'Squidward Tentacles', 'squidward@example.com', '123-456-7890', '2026-09-18 21:12:48'),
@@ -65,7 +65,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `avatar`, `created_at`) VALUES
-(1, 'admin101', 'Renzo', NULL, '2026-09-18 21:12:48'),
+(1, 'admin101', 'Renzo', '1791810036_2e6574388ebd313b4852.jpg', '2026-09-18 21:12:48'),
 (2, 'cashier101', 'Miguel', NULL, '2026-09-18 21:12:48'),
 (3, 'cashier102', 'Reyes', NULL, '2026-09-18 21:12:48'),
 (4, 'manager101', 'Espino', NULL, '2026-09-18 21:12:48'),

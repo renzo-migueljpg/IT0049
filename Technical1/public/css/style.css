@@ -235,4 +235,11 @@ footer {
     color: #64748b;
     font-size: 13px;
 }
+
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
 }
